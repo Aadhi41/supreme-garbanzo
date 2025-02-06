@@ -21,7 +21,7 @@ fun AppNavigation(viewModel: ProductViewModel = ProductViewModel()) {
             arguments = listOf(navArgument("productId") { type = NavType.IntType })
         ) { backStackEntry ->
             val productId = backStackEntry.arguments?.getInt("productId") ?: 0
-            DetailScreen(productId, viewModel)
+            DetailScreen(productId = productId, viewModel = viewModel, navController = navController)
         }
         composable("addProduct") {
             AddProductScreen(navController, viewModel)
